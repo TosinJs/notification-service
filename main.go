@@ -75,7 +75,7 @@ func main() {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		err = SendNotification(fcmClient, ctx, tokens, "UserId", "Message")
+		err = SendNotification(fcmClient, ctx, tokens, message.UserId, message.UserId)
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
